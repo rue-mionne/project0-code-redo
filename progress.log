@@ -1,0 +1,2 @@
+2nd July 2022
+One step at a time, changing names first. Already starting to despise myself for creating additional troubles for the code maintenance naming variables path, path_save, default_path... Changing to names like originPath, savePath etc.. Some of the names may become being deleted after I rework functions but well, one step at a time.
