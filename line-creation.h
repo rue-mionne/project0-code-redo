@@ -1,8 +1,18 @@
 extern char* line;
 extern int lineLenght;
 
-void createLine();
+typedef enum {LINE_INCOMPLETE}lineStatus;
+
+void createLine(char**);
+void initiateLineCreation(char**);
 void createAggregation();
 void setPositionInAggregation();
-void addWordToAggregate();
+void fillAggregation();
 int isLineIncomplete();
+int isThereABitLeft();
+void addWordToAggregation();
+void finishLineCreation(lineStatus);
+void freeAggregation();
+int areWordsInAggregation();
+void freeWords();
+lineStatus getLineStatus();

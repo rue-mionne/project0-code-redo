@@ -1,3 +1,6 @@
-2nd July 2022
+2nd June 2022
 One step at a time, changing names first. Already starting to despise myself for creating additional troubles for the code maintenance naming variables path, path_save, default_path... Changing to names like originPath, savePath etc.. Some of the names may become being deleted after I rework functions but well, one step at a time.
 And it seems that I couldn't finish it all today. On the brigth side, I managed to get the Coc plugin to work as intended so no more fighting with weird autocompletion behaviour. Something also tells me that I'll be changing many names again anyways. Actually most if not all. Well, this experience should motivate me later to write a better and easier to maintain code. Especially as my later projects are probably going to be much bigger...
+
+3rd June 2022
+If time travel ever gets invented and becomes accesible, the first thing I'll do will be to smack my old self and prevent her from naming variables nbuff and nread, then mixing them up so that in the end nbuff was connected to the data array nad nread to the buffer. Finally initial renaming is finally over and I can start thinking about restructuring function wise... Looking at that line-making functions gives me goosebumbs already. What a mess...
