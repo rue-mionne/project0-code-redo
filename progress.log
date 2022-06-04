@@ -4,3 +4,6 @@ And it seems that I couldn't finish it all today. On the brigth side, I managed 
 
 3rd June 2022
 If time travel ever gets invented and becomes accesible, the first thing I'll do will be to smack my old self and prevent her from naming variables nbuff and nread, then mixing them up so that in the end nbuff was connected to the data array nad nread to the buffer. Finally initial renaming is finally over and I can start thinking about restructuring function wise... Looking at that line-making functions gives me goosebumbs already. What a mess...
+
+4th June 2022
+And of course, I forgot to write down my progress after finishing yesterday. Well, not much harm done, considering that I had so little time that the only thing I did today was finishing second exit case from line-creation module and reformatting functions... Stark contrast to yesterday, when Iwas kinda forced to handle multiple files so basically I had to learn about extern and headers... and I must admit, it is easier to read through the changed areas now, that they're not just a giant block of badly marked with comments code. To think that I'll have to showcase the old code as my final project... I already dread it.

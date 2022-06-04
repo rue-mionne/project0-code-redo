@@ -9,13 +9,11 @@ int sumWithSpaces, wordLenghtWithSpaces, wordCount;
 char** positionInSource;
 lineStatus lineExitStatus;
 
-void createLine(char** sourceBuffer)
-{
+void createLine(char** sourceBuffer){
 	initiateLineCreation(sourceBuffer);
 }
 
-void initiateLineCreation(char** sourceBuffer)
-{
+void initiateLineCreation(char** sourceBuffer){
 	createAggregation();
 	setPositionInAggregation();
 	sumWithSpaces=0;
@@ -24,19 +22,18 @@ void initiateLineCreation(char** sourceBuffer)
 	positionInSource=sourceBuffer;
 }
 
-void createAggregation()
-{
-	if((aggregation=(char**)calloc((lineLenght+1), sizeof(char*)))==NULL)
-		fprintf(stderr, "Zabrakło pamięci!\n");
-}
+void createAggregation(){
+	if((aggregation=(char**)calloc((lineLenght+1), sizeof(char*)))==NULL){
+			fprintf(stderr, "Allocation error!\n");
+			finishLineCreation(ALLOCATION_ERROR);
+		}	
+	}
 
-void setPositionInAggregation()
-{
+void setPositionInAggregation(){
 	positionInAggregation=aggregation;
 }
 
-void fillAggregation()
-{
+void fillAggregation(){
 	while(isLineIncomplete())
 	{
 		if(isThereABitLeft())
@@ -46,24 +43,21 @@ void fillAggregation()
 	}
 }
 
-int isLineIncomplete()
-{
+int isLineIncomplete(){
 	if(sumWithSpaces<lineLenght)
 		return 1;
 	else
 		return 0;
 }
 
-int isThereABitLeft()
-{
+int isThereABitLeft(){
 	if(**positionInSource=='\0')
 		return 0;
 	else
 		return 1;
 }
 
-void addWordToAggregation()
-{
+void addWordToAggregation(){
 	/*
 	 *
 	 *TODO: Finish line handling
@@ -72,15 +66,13 @@ void addWordToAggregation()
 	 */
 }
 
-void finishLineCreation(lineStatus exitStatus)
-{
+void finishLineCreation(lineStatus exitStatus){
 	freeAggregation();
 	positionInAggregation=NULL;
 	lineExitStatus=exitStatus;
 }
 
-void freeAggregation()
-{
+void freeAggregation(){
 	if(areWordsInAggregation())
 	{
 		freeWords();
@@ -89,18 +81,20 @@ void freeAggregation()
 	aggregation=NULL;
 }
 
-int areWordsInAggregation()
-{
+int areWordsInAggregation(){
 	if(wordCount>0)
 		return 1;
 	else
 		return 0;
 }
 
-void freeWords()
-{
+void freeWords(){
 	for (; wordCount>=0; --wordCount) 
 	{
 		free(aggregation[wordCount]);
 	}
+}
+
+lineStatus getLineStatus(){
+	return lineExitStatus;
 }

@@ -1,7 +1,7 @@
 extern char* line;
 extern int lineLenght;
 
-typedef enum {LINE_INCOMPLETE}lineStatus;
+typedef enum {LINE_INCOMPLETE, ALLOCATION_ERROR}lineStatus;
 
 void createLine(char**);
 void initiateLineCreation(char**);
