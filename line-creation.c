@@ -11,6 +11,7 @@ lineStatus lineExitStatus;
 
 void createLine(char** sourceBuffer){
 	initiateLineCreation(sourceBuffer);
+	fillAggregation();
 }
 
 void initiateLineCreation(char** sourceBuffer){
@@ -26,8 +27,8 @@ void createAggregation(){
 	if((aggregation=(char**)calloc((lineLenght+1), sizeof(char*)))==NULL){
 			fprintf(stderr, "Allocation error!\n");
 			finishLineCreation(ALLOCATION_ERROR);
-		}	
-	}
+	}	
+}
 
 void setPositionInAggregation(){
 	positionInAggregation=aggregation;
@@ -58,12 +59,89 @@ int isThereABitLeft(){
 }
 
 void addWordToAggregation(){
-	/*
-	 *
-	 *TODO: Finish line handling
-	 *
-	 *
-	 */
+	int wordLenght;
+	wordLenght=findNextWord();
+	if(isThereOverflow(wordLenght)||isWordEmpty(wordLenght))
+		handleAbnormalWord(wordLenght);
+	else{
+		updateAggregation(wordLenght);
+		/*
+		 *
+		 *TODO: Find true word length (separated from putWord function from original file)
+		 *
+		 *
+		 */
+	}
+}
+
+int findNextWord(){
+	int bitCount=0;
+	while(bitCount<(lineLenght*2)){
+		if(didTheWordEnd()){
+			return finishWordCreation(bitCount);
+		}
+		bitCount++;
+		positionInSource++;
+	}
+	return -1; //TODO: Abnormal source exception
+}
+
+int didTheWordEnd(){
+	if(**positionInSource==' '||**positionInSource=='\0')
+		return 1;
+	else
+		return 0;
+}
+
+int finishWordCreation(int bitCount){
+	if(bitCount==0)
+		return -2;
+	positionInSource-=bitCount;
+	return bitCount;
+}
+
+int isThereOverflow(int wordLenght)
+{
+	if((sumWithSpaces+wordLenght+1) >= lineLenght)
+		return 1;
+	else
+		return 0;
+}
+
+int isWordEmpty(int wordLenght){
+	if(wordLenght==-2)
+		return 1;
+	else
+		return 0;
+}
+
+void handleAbnormalWord(int wordLenght){
+	if(isThereOverflow(wordLenght))
+		formatLine();
+	if(isWordEmpty(wordLenght))
+		*positionInAggregation++;
+
+}
+
+void updateAggregation(int wordLenght){
+	positionInAggregation=createWord(wordLenght);
+	positionInAggregation++;
+}
+
+char** createWord(int wordLenght){
+	char** word;
+	char* tempWord=(char*)calloc((wordLenght+1), sizeof(char));
+	word=&tempWord;
+	strncpy(*word,*positionInSource, wordLenght);
+	return word;
+}
+
+void formatLine(){
+/*
+ *
+ * TODO:line formatting
+ *
+ */
 }
 
 void finishLineCreation(lineStatus exitStatus){
