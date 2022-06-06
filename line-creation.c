@@ -35,13 +35,10 @@ void setPositionInAggregation(){
 }
 
 void fillAggregation(){
-	while(isLineIncomplete())
-	{
-		if(isThereABitLeft())
-			addWordToAggregation();
-		else
-			finishLineCreation(LINE_INCOMPLETE);
-	}
+	if(isThereABitLeft())
+		addWordToAggregation();
+	else
+		finishLineCreation(LINE_INCOMPLETE);
 }
 
 int isLineIncomplete(){
@@ -67,7 +64,7 @@ void addWordToAggregation(){
 		updateAggregation(wordLenght);
 		/*
 		 *
-		 *TODO: Find true word length (separated from putWord function from original file)
+		 *TODO: Find true word length (separated from putWord function from original file); WARNING: remove while loop being Aggregation control - modify updateAggregation to be recursion
 		 *
 		 *
 		 */
@@ -126,6 +123,7 @@ void handleAbnormalWord(int wordLenght){
 void updateAggregation(int wordLenght){
 	positionInAggregation=createWord(wordLenght);
 	positionInAggregation++;
+	updateWordLenght(wordLenght);
 }
 
 char** createWord(int wordLenght){
@@ -134,6 +132,23 @@ char** createWord(int wordLenght){
 	word=&tempWord;
 	strncpy(*word,*positionInSource, wordLenght);
 	return word;
+}
+
+void updateWordLenght(int wordLenght){
+	int currentBitCount=0;
+	int utf8BitCount=0;
+	for(;currentBitCount<wordLenght;currentBitCount++){
+		if(isItUtf8((*positionInAggregation)[currentBitCount])){
+			currentBitCount++;
+			utf8BitCount++;
+		}//TODO: export if to different function
+	}
+}
+
+int isItUtf8(char fisrtBite){
+	/*
+	 * TODO:checking for utf8
+	 */
 }
 
 void formatLine(){

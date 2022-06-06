@@ -25,6 +25,8 @@ void handleAbnormalWord(int);
 
 void updateAggregation(int);
 char** createWord(int);//not sure about this one; will need testing
+void updateWordLenght(int);
+int isItUtf8(char);
 
 void formatLine();
 
