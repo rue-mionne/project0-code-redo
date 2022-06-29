@@ -11,3 +11,9 @@ And of course, I forgot to write down my progress after finishing yesterday. Wel
 6th June 2022
 Oh, something tells me that my logging problems will be persistent...Yesterday, because of the upcoming exams I had to prepare for I've managed to only add handling cases that end the accumulation of the aggregation. Today I've planned to finish the aggregation section alltogether and go into line formating part... however after reading chapters about testing and classes (well, it may not be an object oriented program but it still has class-like sections) I think I should learn about testing first and then move aggregation section to a seperate file. After all, even without line formatting section line-handling source file has almost 200 lines...
 Not to mention, it'll be easier to test modules when they're separate. And one of the most important things I've learned why first writing this project - you can't just write a big chunk of code without checking if it works. And considering that I'm already making quite significant changes in structure compared to the original version... I need testing.
+
+28 June
+Exams are over and I should have more time to get back to work soon. I think. While I'm still thinking about applying testing, redoing the whole project using TDD... well, it would have a learning value for sure. But that would mean redoing what I've aleady done...
+
+29 June
+Well, still not done learning how to use CUnit... but at least after finally pushing the repo to the remote I realised I formatted the ReadMe file wrong. 
