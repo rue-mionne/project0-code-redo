@@ -23,3 +23,6 @@ Slowly started creating unit testing file. Although by this time I'm slowly star
 
 1 July
 Seems I've gotten a hang of it. Created my first test, got a first "green bar". Staring tomorrow I'm going back to working on the code itself. Finally.
+
+2 July
+First function test behind me... partially. After seeing how my "ls" command output grows bigger and bigger I decided to separate the code to not get lost. The only think I'm slightly bitter about is that I find it hard to take really small steps... Maybe it's just how it is with C. Or it's just my lack of experience. Time will show.
