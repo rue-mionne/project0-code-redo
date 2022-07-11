@@ -18,6 +18,8 @@ int main(){
 		return CU_get_error();
 	
 	CU_ADD_TEST(pSuiteAggregation, testWordFinding);
+	CU_ADD_TEST(pSuiteAggregation, testWordFindingIfTabulator);
+	CU_ADD_TEST(pSuiteAggregation, testWordFindingDoubleSpaceCase);
 
 	CU_console_run_tests();
 

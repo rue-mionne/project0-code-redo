@@ -2,5 +2,7 @@
 #define AGGREGATION_SUITE_H
 
 void testWordFinding();
+void testWordFindingIfTabulator();
+void testWordFindingDoubleSpaceCase();
 
 #endif

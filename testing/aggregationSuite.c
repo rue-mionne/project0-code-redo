@@ -10,3 +10,15 @@ void testWordFinding(){
 	char *test_word={"test"};
 	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
 }
+
+void testWordFindingIfTabulator(){
+	char *test_line={"test\t"};
+	char *test_word={"test"};
+	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
+}
+
+void testWordFindingDoubleSpaceCase(){
+	char *test_line={"  test"};
+	char *test_word={"test"};
+	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
+}
