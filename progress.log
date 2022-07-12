@@ -26,3 +26,6 @@ Seems I've gotten a hang of it. Created my first test, got a first "green bar". 
 
 2 July
 First function test behind me... partially. After seeing how my "ls" command output grows bigger and bigger I decided to separate the code to not get lost. The only think I'm slightly bitter about is that I find it hard to take really small steps... Maybe it's just how it is with C. Or it's just my lack of experience. Time will show.
+
+12 July 
+Well, after small break to read a bit more about unit testing I finished two more tests. The last one took me two days of wondering what had I forgotten again when it comes to handling strings... only to realise that the function I tested simply didn't enter the if statement. Well... maybe I should make my own mini pogram on the side to show me the output when the test fails, as CUnit doesn't seem to offer easy to read message about a failed assertion like xUnit.net does... On the bright side... it seems that the most crucial part of the program is done. Well. It only seems so as during refactorisation I'll have to move the line variable tothe module. Probably.
