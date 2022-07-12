@@ -8,7 +8,7 @@
 void testWordFinding(){
 	char *test_line={"test "};
 	char *test_word={"test"};
-	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
+	CU_ASSERT_FALSE(strcmp(test_word,findWord(&test_line)));
 }
 
 void testWordFindingIfTabulator(){
@@ -18,7 +18,9 @@ void testWordFindingIfTabulator(){
 }
 
 void testWordFindingDoubleSpaceCase(){
-	char *test_line={"  test"};
+	char *test_line={"\ttest"};
 	char *test_word={"test"};
 	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
 }
+
+
