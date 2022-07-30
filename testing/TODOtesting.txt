@@ -1,6 +1,3 @@
 Aggregation tasks:
-find words
 separate words
-aggregate enough of them to form a tet line
-
-ends with double space
+aggregate enough of them to form a test line

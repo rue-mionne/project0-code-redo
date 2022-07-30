@@ -4,5 +4,6 @@
 void testWordFinding();
 void testWordFindingIfTabulator();
 void testWordFindingDoubleSpaceCase();
+void testWordFindingUnicode();
 
 #endif

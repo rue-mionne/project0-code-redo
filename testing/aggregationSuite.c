@@ -2,25 +2,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <wchar.h>
 #include "aggregationSuite.h"
 #include "../core/aggregationModule.h"
 
+int characterLimit = 80;
+
 void testWordFinding(){
-	char *test_line={"test "};
-	char *test_word={"test"};
-	CU_ASSERT_FALSE(strcmp(test_word,findWord(&test_line)));
+	wchar_t *test_line={L"test "};
+	wchar_t *test_word={L"test"};
+	CU_ASSERT_FALSE(wcscmp(test_word,findWord(&test_line)));
 }
 
 void testWordFindingIfTabulator(){
-	char *test_line={"test\t"};
-	char *test_word={"test"};
-	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
+	wchar_t *test_line={L"test\t"};
+	wchar_t *test_word={L"test"};
+	CU_ASSERT_FALSE(wcscmp(test_word, findWord(&test_line)));
 }
 
 void testWordFindingDoubleSpaceCase(){
-	char *test_line={"\ttest"};
-	char *test_word={"test"};
-	CU_ASSERT_FALSE(strcmp(test_word, findWord(&test_line)));
+	wchar_t *test_line={L"\t\ttest"};
+	wchar_t *test_word={L"test"};
+	CU_ASSERT_FALSE(wcscmp(test_word, findWord(&test_line)));
+}
+
+void testWordFindingUnicode(){
+	wchar_t *test_line={L"\tтест"};
+	wchar_t *test_word={L"тест"};
+	CU_ASSERT_FALSE(wcscmp(test_word, findWord(&test_line)));
 }
 
 

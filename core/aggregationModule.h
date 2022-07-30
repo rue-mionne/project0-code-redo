@@ -1,6 +1,8 @@
 #ifndef AGGREGATION_MODULE
 #define AGGREGATION_MODULE
 
-char* findWord(char**);
+extern int characterLimit;
+
+wchar_t* findWord(wchar_t**);
 
 #endif
