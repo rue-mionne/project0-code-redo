@@ -5,5 +5,7 @@ void testWordFinding();
 void testWordFindingIfTabulator();
 void testWordFindingDoubleSpaceCase();
 void testWordFindingUnicode();
+void testLoadingToAggregationSingleWord();
+void testLoadingToAggregationMultipleWords();
 
 #endif

@@ -20,7 +20,10 @@ int main(){
 	CU_ADD_TEST(pSuiteAggregation, testWordFinding);
 	CU_ADD_TEST(pSuiteAggregation, testWordFindingIfTabulator);
 	CU_ADD_TEST(pSuiteAggregation, testWordFindingDoubleSpaceCase);
-	CU_ADD_TEST(pSuiteAggregation, testWordFindingUnicode);
+	CU_ADD_TEST(pSuiteAggregation, testWordFindingUnicode);	
+	CU_ADD_TEST(pSuiteAggregation,testLoadingToAggregationSingleWord);
+	CU_ADD_TEST(pSuiteAggregation,testLoadingToAggregationMultipleWords);
+
 
 	CU_console_run_tests();
 

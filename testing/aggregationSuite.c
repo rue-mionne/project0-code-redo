@@ -6,7 +6,6 @@
 #include "aggregationSuite.h"
 #include "../core/aggregationModule.h"
 
-int characterLimit = 80;
 
 void testWordFinding(){
 	wchar_t *test_line={L"test "};
@@ -32,4 +31,17 @@ void testWordFindingUnicode(){
 	CU_ASSERT_FALSE(wcscmp(test_word, findWord(&test_line)));
 }
 
+void testLoadingToAggregationSingleWord(){
+	wchar_t *test_line={L"testing"};
+	wchar_t *test_aggregation[1]={L"testing"};
+	CU_ASSERT_FALSE(wcscmp(*test_aggregation, *formAggregation(test_line)));
+}
 
+void testLoadingToAggregationMultipleWords(){
+	wchar_t *test_line={L"testing line"};
+	wchar_t *test_aggregation[2]={L"testing", L"line"};
+	wchar_t **result_aggregation=formAggregation(test_line);
+	for(int i=0; i<2;i++){
+		CU_ASSERT_FALSE(wcscmp(test_aggregation[i], result_aggregation[i]));
+	}
+}
