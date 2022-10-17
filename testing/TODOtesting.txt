@@ -1,0 +1,8 @@
+Aggregation tasks:
+separate words
+aggregate enough of them to form a test line
+
+count lenght of a word	v
+put it in an array/list	v
+move a pointer	v
+control the max length
