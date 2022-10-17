@@ -23,6 +23,7 @@ int main(){
 	CU_ADD_TEST(pSuiteAggregation, testWordFindingUnicode);	
 	CU_ADD_TEST(pSuiteAggregation,testLoadingToAggregationSingleWord);
 	CU_ADD_TEST(pSuiteAggregation,testLoadingToAggregationMultipleWords);
+	CU_ADD_TEST(pSuiteAggregation,testLoadingToAggregationOverflow);
 
 
 	CU_console_run_tests();

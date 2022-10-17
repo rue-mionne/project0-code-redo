@@ -7,5 +7,6 @@ void testWordFindingDoubleSpaceCase();
 void testWordFindingUnicode();
 void testLoadingToAggregationSingleWord();
 void testLoadingToAggregationMultipleWords();
+void testLoadingToAggregationOverflow();
 
 #endif

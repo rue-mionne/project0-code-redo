@@ -45,3 +45,12 @@ void testLoadingToAggregationMultipleWords(){
 		CU_ASSERT_FALSE(wcscmp(test_aggregation[i], result_aggregation[i]));
 	}
 }
+
+void testLoadingToAggregationOverflow(){
+	wchar_t *test_line={L"testing  line  test line"};
+	wchar_t *test_aggregation[1]={L"testing"};
+	wchar_t **result_aggregation=formAggregation(test_line);
+	for(int i=0; i<2;i++){
+		CU_ASSERT_FALSE(wcscmp(test_aggregation[i], result_aggregation[i]));
+	}
+}

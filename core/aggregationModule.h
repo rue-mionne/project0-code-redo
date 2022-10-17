@@ -1,7 +1,7 @@
 #ifndef AGGREGATION_MODULE
 #define AGGREGATION_MODULE
 
-#define CHARACTERLIMIT 80
+#define CHARACTERLIMIT 8
 
 wchar_t* findWord(wchar_t**);
 
